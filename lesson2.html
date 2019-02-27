@@ -15,11 +15,31 @@
 		<script type="text/babel">
 		
 			const Robert = () => {
-				return <h1>Hello</h1>
+				return (
+				<tr>
+					<th>№</th>
+					<th>Задача</th>
+				</tr>
+				)
 			}
 			
+			const Robert2 = () => {
+				return (
+				<tr>
+					<td>1</td>
+					<td>Lesson</td>
+				</tr>
+				)
+			}		
+			
 			ReactDOM.render(
-				<Robert />,
+			<table>
+				<tbody>
+					<Robert />
+					<Robert2 />
+				</tbody>
+			</table>	
+				,
 				document.getElementById('root')
 			);
 			
