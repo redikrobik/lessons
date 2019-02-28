@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<title>lesson1</title>
+		<!--подлкючение реакт-->
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<!--/подлкючение реакт-->
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+		<style>
+			.red{color:#ff0000;}
+		</style>		
+    </head>
+    <body>
+		<div id="root"></div>
+		
+		<script type="text/babel">
+		
+		const App = () => {
+		
+			return <p>Привет я компонент</p>
+		}
+		
+		const Blog = () => {
+			return <p>Классный блог</p>
+		}
+		
+		const RobertApp = () => {
+			return (
+			<React.Fragment>
+				<App/>
+				<Blog/>
+			</React.Fragment>
+			)
+		}
+		
+
+		
+		ReactDOM.render(
+			
+			<RobertApp/>,
+			document.getElementById('root')
+			
+		);
+		
+		
+		</script>
+    </body>
