@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<title>lesson1</title>
+		<!--подлкючение реакт-->
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<!--/подлкючение реакт-->
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+		<style>
+			.red{color:#ff0000;}
+		</style>		
+    </head>
+    <body>
+		<div id="root"></div>
+		
+		<script type="text/babel">
+		
+		const NewsList = [
+			{
+				id:'1000',
+				avtor:'Данат',
+				text:'Новость от Даната',
+				metka:'New'
+			},
+			{
+				id:'1001',
+				avtor:'Данат',
+				text:'Новость от Роберта',
+				metka:'New'
+			},		
+			{
+				id:'1002',
+				avtor:'Данат',
+				text:'Новость от Бартеркарта',
+				metka:'Old'
+			},	
+		]
+		
+		
+
+		class News extends React.Component{
+			render(){
+				const NewsTemplate = this.props.data.map(function(item) {
+				  return (
+					<div key={item.id}>
+					  <p className="news__author">{item.avtor} ({item.metka}):</p>
+					  <p className="news__text">{item.text}</p>
+					</div>
+				  )
+				})
+				console.log(NewsTemplate)
+				return (
+					<div className="news">
+						{NewsTemplate}
+					</div>
+				)
+			} 
+		}
+		
+		const App = () =>{
+			return (
+				<React.Fragment>
+					<News data={NewsList} />
+				</React.Fragment>
+			)
+			
+		}
+		
+		
+	
+		ReactDOM.render(
+			<App/>,
+			document.getElementById('root')
+		);
+		
+		</script>
+    </body>
